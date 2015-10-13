@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="Flower">
+  <head>
+    <meta charset="utf-8">
+    <title>Flower</title>
+    <base href="/" />
+    <meta name="viewport" content="initial-scale=1" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <style>
+
+    </style>
+    <!--<script src="/bower_components/angularjs/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+
+
+
+    <script src="/bower_components/cryptojslib/components/core-min.js"></script>
+    <script src="/bower_components/cryptojslib/components/md5-min.js"></script>
+    <script src="/bower_components/cryptojslib/components/enc-base64-min.js"></script>
+    <script src="/bower_components/cryptojslib/components/enc-utf16-min.js"></script>
+
+    <script src="/app/app.js"></script>
+    <script src="/app/config.js"></script>
+    <script src="/app/routes.js"></script>
+    <script src="/app/template/nav.js"></script>
+    <!--
+    <script src="/app/convert/convert.js"></script>
+
+    <script src="/app/convert/base64converter.js"></script>
+  -->
+    <script src="/app/encode/encode.js"></script>
+
+
+    <script src="/app/crossdomain/iframe/iframe.js"></script>
+
+    <!--
+
+    binary editor
+
+    Heartbleed https://hbelb.filippo.io/bleed/query?u=google.com&skip=1
+
+
+    html entities
+    urlencode
+    md5
+    sha256
+    unicode
+
+
+    ajax (+ XSS file uplaoder) + csrf tester
+    xss cheatsheet
+    xss eval'er
+    sql injection cheatsheet
+    sql injection eval'er
+
+    image relay (/relay/x/y (r.php)?)
+
+    scratchpad
+
+
+    xss image tracker
+
+    -->
+  </head>
+  <body layout="column">
+    <nav
+          navigation
+          ng-controller="NavigationController">
+    </nav>
+    <div ng-view></div>
+
+    <footer>
+      &nbsp;
+    </footer>
+  </body>
+</html>

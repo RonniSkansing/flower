@@ -1,0 +1,11 @@
+<section>
+  <md-input-container flex>
+    <label>Url</label>
+    <input type="url" autofocus ng-init="url = 'http://'" ng-model="url" ng-change="iframe.set(url)" />
+  </md-input-container>
+  <md-input-container flex>
+    <label>Refresh in {{ timeout }} miliseconds seconds</label>
+    <input type="range" value={{timeout}} min=1000 max=10000 step=500 ng-init="timeout = 1000" ng-model="timeout" ng-change="iframe.setTimeout(timeout)" />
+  </md-input-container>
+  <iframe layout="column" width="100%" height="" flex src="{{ iframe.get() }}"></iframe>
+</section>
