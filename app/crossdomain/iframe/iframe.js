@@ -17,25 +17,25 @@ app.controller('CrosdomainIframeController', function($timeout) {
   var timeout = 2000;
   var refreshPromise;
 
-  this.set = (newSource) => {
+  this.set = function(newSource) {
     upcomingSource = newSource;
     refresh();
   };
 
-  this.setTimeout = (miliseconds) => {
+  this.setTimeout = function(miliseconds) {
     timeout = miliseconds;
   };
 
-  var refresh = () => {
+  var refresh = function() {
     if(refreshPromise) {
       $timeout.cancel(refreshPromise);
     }
-    refreshPromise = $timeout( () => {
+    refreshPromise = $timeout( function() {
       source = upcomingSource;
     }, timeout);
   };
 
-  this.get = () => {
+  this.get = function() {
     return source;
   };
 });

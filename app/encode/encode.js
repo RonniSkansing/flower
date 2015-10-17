@@ -24,7 +24,7 @@ app.service('encodingService', function() {
     to: encoding.Base64
   };
 
-  this.convert = (text) => {
+  this.convert = function(text) {
     try {
       //if(state.to in CryptoJS.enc && state.to in CryptoJS.from) {
         return CryptoJS.enc[state.to].stringify(
@@ -38,11 +38,11 @@ app.service('encodingService', function() {
     }
   };
 
-  this.getEncodings = () => {
+  this.getEncodings = function(){
     return Object.keys(encoding);
   }
 
-  this.setFrom = (encodingFrom) => {
+  this.setFrom = function(encodingFrom) {
     if(encoding[encodingFrom] === undefined) {
       console.warn('\''+encodingFrom+'\ not found¨. Mode is '+state);
     } else {
@@ -50,7 +50,7 @@ app.service('encodingService', function() {
     }
   }
 
-  this.setTo = (encodingTo) => {
+  this.setTo = function(encodingTo){
     if(encoding[encodingTo] === undefined) {
       console.warn('\''+encodingTo+'\ not found¨. Mode is '+state);
     } else {
@@ -58,7 +58,7 @@ app.service('encodingService', function() {
     }
   }
 
-  this.getState = () => {
+  this.getState = function(){
     return state;
   };
 });
@@ -66,27 +66,27 @@ app.service('encodingService', function() {
 app.controller(
   'ConverterController',
   function(encodingService) {
-    this.getEncodings = () => {
+    this.getEncodings = function(){
       return encodingService.getEncodings();
     };
 
-    this.getState = () => {
+    this.getState = function(){
       return encodingService.getState();
     };
 
-    this.setTo = (encoding) => {
+    this.setTo = function(encoding){
       encodingService.setTo(encoding);
     };
 
-    this.setFrom = (encoding) => {
+    this.setFrom = function(encoding) {
       encodingService.setFrom(encoding);
     };
 
-    this.setMode = (mode) => {
+    this.setMode = function(mode) {
       encodingService.setMode(mode);
     };
 
-    this.convert = (text) => {
+    this.convert = function(text) {
       return encodingService.convert(text);
     };
   }
