@@ -1,23 +1,17 @@
 <section>
-  <md-input-container flex>
     <label>From</label>
-    <md-select ng-model="from" ng-change="converter.setFrom(from)" ng-selected="converter.getState().from">
-        <md-option ng-repeat="encoding in converter.getEncodings()" ng-value="encoding">
+    <select ng-model="from" ng-change="converter.setFrom(from)" ng-selected="converter.getState().from">
+        <option ng-repeat="encoding in converter.getEncodings()" ng-value="encoding">
           {{ encoding }}
-        </md-option>
-    </md-select>
-  </md-input-container>
-  <md-input-container flex>
+        </option>
+    </select>
     <label>To</label>
-    <md-select ng-model="to" ng-change="converter.setTo(to)" ng-selected="converter.getState().to">
-        <md-option ng-repeat="encoding in converter.getEncodings()" ng-value="encoding">
+    <select ng-model="to" ng-change="converter.setTo(to)" ng-selected="converter.getState().to">
+        <option ng-repeat="encoding in converter.getEncodings()" ng-value="encoding">
           {{ encoding }}
-        </md-option>
-    </md-select>
-  </md-input-container>
-  <md-input-container flex>
+        </option>
+    </select>
     <label>Text to be converted</label>
     <textarea ng-model="text"></textarea>
-  </md-input-container>
   {{ converter.convert(text) }}
 </section>
