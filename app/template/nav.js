@@ -1,6 +1,6 @@
 var app = angular.module('Flower.Template', ['ngMaterial']);
 
-app.directive('navigation', () => {
+app.directive('navigation', function(){
   return {
     controller: 'NavigationController',
     controllerAs: 'navigation',
@@ -13,11 +13,11 @@ app.controller('NavigationController', ['$mdSidenav', function($mdSidenav){
     xss: ''
   };
 
-  this.getMenu = () => {
+  this.getMenu = function() {
 
   };
 
-  this.toggleSidenav = (menuId) => {
+  this.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };
 }]);
